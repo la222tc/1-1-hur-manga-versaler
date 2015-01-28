@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="_1_1_hur_manga_versaler.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="_1_1_hur_manga_versaler.Default" ViewStateMode="Disabled" %>
 
 <!DOCTYPE html>
 
@@ -8,15 +8,17 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <asp:TextBox ID="InputTextBox" runat="server" Height="109px" Width="292px" TextMode="MultiLine"></asp:TextBox>
-    </div>
         <div>
-            <asp:Button ID="CountButton" runat="server" Text="Räkna antalet Versaler" Height="29px" Width="143px" OnClick="CountButton_Click" />
+            <asp:TextBox ID="InputTextBox" runat="server" TextMode="MultiLine" ViewStateMode="Enabled"></asp:TextBox>
         </div>
         <div>
-            <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+            <asp:Button ID="CountButton" runat="server" Text="Räkna antalet Versaler" OnClick="CountButton_Click" />
         </div>
+        <asp:PlaceHolder ID="ResultPlaceHolder" runat="server" Visible="false">
+            <div>
+                Antal Versaler:  <asp:Label ID="Label1" runat="server"></asp:Label>
+            </div>
+        </asp:PlaceHolder>
     </form>
 </body>
 </html>

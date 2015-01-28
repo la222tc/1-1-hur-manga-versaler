@@ -16,21 +16,18 @@ namespace _1_1_hur_manga_versaler
 
         protected void CountButton_Click(object sender, EventArgs e)
         {
-            var input = InputTextBox.Text;
 
-            Label1.Text = "Antal Versaler: " + Model.TextAnalyzer.GetNumberOfCapitals(input);
-
-            if (InputTextBox.Enabled == true)
+            if (InputTextBox.Enabled)
             {
+                Label1.Text = Model.TextAnalyzer.GetNumberOfCapitals(InputTextBox.Text).ToString();
                 InputTextBox.Enabled = false;
                 CountButton.Text = "Rensa";
+                ResultPlaceHolder.Visible = true;
             }
             else
             {
                 InputTextBox.Enabled = true;
-                InputTextBox.Text = "";
-                Label1.Text = "";
-                CountButton.Text = "Räkna antalet Versaler";
+                InputTextBox.Text = String.Empty;
             }
         }
     }
